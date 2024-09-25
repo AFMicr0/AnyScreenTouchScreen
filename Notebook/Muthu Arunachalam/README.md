@@ -11,7 +11,7 @@ Note: Github doesn't automatically support rendering of Table of Contents, but y
 
 We constructed a rough draft of our block diagram in order to start making connections between subsystems and fleshing out the details of our project.  Below is a rough draft of what we think the design should look like, but anticipate much discussion over the following weeks that will change up how the subsystems are designed and how they communicate with each other.
 
-![](/Muthu Arunachalam/Initial Block Diagram Sketch.png)
+![]([/Muthu Arunachalam/Initial Block Diagram Sketch.png](https://github.com/AFMicr0/AnyScreenTouchScreen/blob/main/Notebook/Muthu%20Arunachalam/Initial%20Block%20Diagram%20Sketch.png))
 
 ## 9/16 (Individual)
 
