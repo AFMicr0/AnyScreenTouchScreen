@@ -4,8 +4,8 @@
 
 # Table of Contents (Dates)
 
-* TOC
-{:toc}
+[TOC]
+Note: Github doesn't automatically support rendering of Table of Contents, but you can click the outline option in the top right of this viewing window to view/jump to headings
 
 ## 9/15 (Meeting)
 
