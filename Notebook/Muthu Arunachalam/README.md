@@ -4,7 +4,7 @@
 
 # Table of Contents (Dates)
 
-{:toc}
+* TOC {:toc}
 
 ## 9/15 (Meeting)
 
