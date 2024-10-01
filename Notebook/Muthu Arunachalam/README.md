@@ -72,3 +72,30 @@ Given these requirements, I think the power subsystem needs to have these compon
 * Power monitoring/protection to detect when battery voltage reaches 3.0-3.3V and maybe to limit current?
 * Schottky Diode &rarr; to prevent damage if battery is inserted incorrectly
 * Capacitors somewhere to stabilize and smooth out the voltage
+
+
+
+## 9/25 (TA Meeting)
+
+* Submit pcb design to TA when we are done
+  * TA's will check pcb's for any simple design flaws
+* Design Review due next week, think of it like marketing the product to people of interest
+  * Use Fall 2022 Team 1 Design Document as template for reference
+* PCB audit is the deadline, not when they order it &rarr; we should submit and order as soon as we are done
+* Final Demo is 150/500 points, and documentation might be worth even more
+  * The documentation and writing is as important, or maybe even more important, than the demo and physical
+* Advanced design system
+* lab notebook, buck converter reference, and schottky diode
+
+## 9/30 (Meeting)
+
+
+
+Send email to TA with schematic files, attach list of questions;4x s3 microcontroller
+
+* Get PCB layout completed by this weekend
+* Enclosure for pen and anchors
+* Source components as soon as possible
+* Button debouncing
+* add power led and switch to power subsystem, replace buck converter circuit with SMC
+* do we need to debounce buttons?
