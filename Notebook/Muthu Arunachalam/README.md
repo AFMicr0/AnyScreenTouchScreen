@@ -95,8 +95,71 @@ Given these requirements, I think the power subsystem needs to have these compon
 Send email to TA with schematic files, attach list of questions;4x s3 microcontroller
 
 * Get PCB layout completed by this weekend
-* Enclosure for pen and anchors
+* CAD Enclosure for pen and anchors and 3D printing
 * Source components as soon as possible
 * Button debouncing
 * add power led and switch to power subsystem, replace buck converter circuit with SMC
 * do we need to debounce buttons?
+* review datasheets and verify pcb design
+* software architecture of GUI, services you plan on using
+* connect fuel gauge I2C to microcontroller
+* boot settings for esp32-s3
+* update block diagram and make it look pretty
+
+
+
+## 10/01 (Meeting)
+
+* Worked on software monitoring subsystem for design document
+* Problem: Confused on how bluetooth communication will work...we need bluetooth to allow for the HID input from the microcontroller but we also need to use bluetooth to get the data for the desktop application data logging.  How does this work?  Can the ESP32 support multiple connections?
+  * Solution:  Bluetooth uses the GATT hierarchical data structure as seen below.  We can utilize the HID protocol as one service and send the data logging information for the desktop application over another service.  This way we can use a single BLE connection to achieve our data monitoring and our HID mouse emulation
+  * ![](BluetoothGATT.png)
+* Another design decision we are facing is what our tech stack will look like.
+* Power subsystem design doc modifications
+  * Calculate estimated current draw for power subsystem and add to requirements section44
+  * Add to power subsystem verification section that we should check the current draw, and that will determine voltage of battery
+* Software Monitoring Subsystem design doc modifications
+  * add tech stack section
+  * go over entire subsystem and remove superfluous mentions of BLE GATT and other stuff that's not necessary
+  * Add to design decisions
+  * Proofread entire thing and look for missing aspects of software design and remove overexplained aspects of software design
+
+
+
+## 10/02 (Meeting)
+
+Agenda:
+
+* software monitoring subystem design doc modifications
+  * add tech stack section
+  * go over entire subsystem and remove superfluous mentions of BLE GATT and other stuff that's not necessary
+  * Add to design decisions
+  * Proofread entire thing and look for missing aspects of software design and remove overexplained aspects of software design
+  * requirements and verification table
+* Power subsystem design doc modifications
+  * Calculate estimated current draw for power subsystem and add to requirements section44
+  * Add to power subsystem verification section that we should check the current draw, and that will determine voltage of battery
+  * requirements and verification table
+* boot settings for esp32-s3
+* update block diagram and make it look pretty
+* CAD Enclosure for pen and anchors and 3D printing
+* add power led and switch to power subsystem, replace buck converter circuit with SMC
+* Cost and schedule section
+* Software Decision Designs and R&V table
+* Power subsystem decisions and table
+* external materials and resources
+* ethics and safety
+
+
+
+## 10/03 (Individual)
+
+Agenda:
+
+* Investigate the use of ESP32 transistors for boot configuration
+  * watch video on ESP32 to figure out confounding issues
+  * investigate any potential boot issues
+* Buy ESP32-S3-WROOM-1-N16 Dev board and potential DWM1000 dev board
+* Ask roommate to email Qorvo for UWB chips
+* Checkout ESP32 dev board and microcontrollers from ECE building
+* Physical Design: CAD
