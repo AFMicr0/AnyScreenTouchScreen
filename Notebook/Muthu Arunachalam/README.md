@@ -11,7 +11,7 @@ Note: Github doesn't automatically support rendering of Table of Contents, but y
 
 We constructed a rough draft of our block diagram in order to start making connections between subsystems and fleshing out the details of our project.  Below is a rough draft of what we think the design should look like, but anticipate much discussion over the following weeks that will change up how the subsystems are designed and how they communicate with each other.
 
-![]([/Muthu Arunachalam/Initial Block Diagram Sketch.png](https://github.com/AFMicr0/AnyScreenTouchScreen/blob/main/Notebook/Muthu%20Arunachalam/Initial%20Block%20Diagram%20Sketch.png))
+![](Initial_Block_Diagram_Sketch.png)
 
 ## 9/16 (Individual)
 
@@ -28,7 +28,7 @@ Sakhi and I finished significant portions of our project proposal in today's mee
   * Given a 15.9" screen size with dimensions of 13.86" x 7.80", we'd expect the mouse  cursor, at least for initial prototypes, to be within a 1cm radius of the pen tip. This would allow us a 5% error in the pen-to-mouse cursor translation during our development period. 
   * Another topic of importance is the calibration of the UWB sensors which severely affect accuracy.  Out of the box, the sensors are not accurate.  Below is a graph of the UWB sensors detected position vs actual distance from an accuracy test done in this [video (at 9:13).](https://youtu.be/-GNkobAxao0?t=553&si=dBFYW62ZgwTIBGEz) You can see that straight out of box, the UWB sensors report a distance of up to 60cm when the actual distance is actually 0cm.  This location sensing error is quite large (especially for our project where we expect sub-centimeter accuracy) and the graph even shows out-of-the-box sensing differences between sensors of the same model.  Thus we will have to offset the location data to pass through the origin in order to accurately map it to the actual distance.  Combining this calibration with sensor fusion and adjustment of outlier data, we should get the accuracy we are looking for.
 
-![UWB Out-Of-Box Sensing Accuracy](PlayfulTech Youtube UWB Sensor Accuracy.png)
+![UWB Out-Of-Box Sensing Accuracy](PlayfulTech_Youtube_UWB_Sensor_Accuracy.png)
 
 
 
@@ -61,9 +61,9 @@ Since I've been tasked with the PCB design for the power subsystems, I thought I
   * The power subsystem for the pen might differ a little because it will have the added IMU which may have different power requirements.
   * Don't need battery management system (BMS) since we are using disposable batteries or even externally charged rechargeable batteries.  However, we might need power monitoring to detect when the battery voltage has reached a certain threshold.
 * Reading over the power specifications from our components' datasheets:
-  * The recommended operating conditions ([datasheet: section 4.2](https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf)) for the ESP32-S3-WROOM microcontroller is ![](ESP32-S3 Recommended Operating Conditions.png)
-  * The recommended operating conditions ([datasheet: section 4.1](https://www.digikey.be/htmldatasheets/production/1933974/0/0/1/dwm1000.html)) for the DWM1000 UWB module is ![](DWM1000 Nominal Operation.png)
-  * The recommended operating conditions ([datasheet: section 4.2](https://www.st.com/resource/en/datasheet/lsm6dso32.pdf)) for the LSM6DSO32 IMU is![](IMU Electrical Specifications.png)
+  * The recommended operating conditions ([datasheet: section 4.2](https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf)) for the ESP32-S3-WROOM microcontroller is ![](ESP32-S3_Recommended_Operating_Conditions.png)
+  * The recommended operating conditions ([datasheet: section 4.1](https://www.digikey.be/htmldatasheets/production/1933974/0/0/1/dwm1000.html)) for the DWM1000 UWB module is ![](DWM1000_Nominal_Operation.png)
+  * The recommended operating conditions ([datasheet: section 4.2](https://www.st.com/resource/en/datasheet/lsm6dso32.pdf)) for the LSM6DSO32 IMU is![](IMU_Electrical_Specifications.png)
   * Condensing these requirements, it makes sense to supply 3.3V for the MCU and UWB modules and 1.8V for the IMU.  These 2 voltage inputs will simplify the PCB design as the power subsystem for every PCB will have a 3.3V supply with the pen having an additional 1.8V supply to accommodate the IMU.
 
 Given these requirements, I think the power subsystem needs to have these components:
@@ -130,6 +130,14 @@ Send email to TA with schematic files, attach list of questions;4x s3 microcontr
 
 Agenda:
 
+* Costs and Schedules section of design document
+
+
+
+## 10/03 (Individual)
+
+Agenda:
+
 * software monitoring subystem design doc modifications
   * add tech stack section
   * go over entire subsystem and remove superfluous mentions of BLE GATT and other stuff that's not necessary
@@ -144,18 +152,12 @@ Agenda:
 * update block diagram and make it look pretty
 * CAD Enclosure for pen and anchors and 3D printing
 * add power led and switch to power subsystem, replace buck converter circuit with SMC
+  * P channel mosfet for reverse polarity protection or full wave bridge rectifier
 * Cost and schedule section
 * Software Decision Designs and R&V table
 * Power subsystem decisions and table
 * external materials and resources
 * ethics and safety
-
-
-
-## 10/03 (Individual)
-
-Agenda:
-
 * Investigate the use of ESP32 transistors for boot configuration
   * watch video on ESP32 to figure out confounding issues
   * investigate any potential boot issues
@@ -163,3 +165,47 @@ Agenda:
 * Ask roommate to email Qorvo for UWB chips
 * Checkout ESP32 dev board and microcontrollers from ECE building
 * Physical Design: CAD
+* fix file linking in notebook
+
+
+
+## 10/07 (Meeting with Mentor Jack Blevins)
+
+PCB layout
+
+
+
+
+
+## 10/08 (Progress Meeting)
+
+Agenda:
+
+* Split up work for design presentation
+
+* 
+
+
+
+Prep for design review tomorrow:
+
+* read through design doc and prepare for presentation tomorrow
+* be able to explain design choices for schematics
+
+
+
+## 10/09 (Meeting)
+
+* Agenda:
+  * Compiled schematics, added power to pen and anchor, changed input buttons and LEDs and etc. to header connectors
+  * Simulate and verify circuits for PCB meeting
+  * PCB layout
+  * Figure out sourcing for parts and buy
+
+
+
+## 10/10 (Individual)
+
+Agenda:
+
+* Verify power subsystem through simulation
