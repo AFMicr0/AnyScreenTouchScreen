@@ -209,3 +209,39 @@ Prep for design review tomorrow:
 Agenda:
 
 * Verify power subsystem through simulation
+
+Used the Texas Instruments WEBENCH power designer tool to get power supply designs. I simply entered the power input of 3.3-4.2V and a desired output of 3.3V at max 1A and it gave me several designs. ![](powerdesigner.png)
+
+![](powerdesigner1.png)
+
+The suggested design was actually quite an improvement to the buck converter I implemented from scratch.  The TI design tool suggested a buck boost switcher design which allows for an input voltage that can be above OR below the desired output voltage. This is a great option for our system because it means we can reach lower discharge levels on our battery and alleviates concerns about our battery providing power since the nominal battery voltage of 3.7V was pretty close to our desired output voltage of 3.3V.  Previously, we were concerned that dropout voltages and efficiency losses would be a problem in our power supply because of the minimal difference in the input and output voltage.  We were worried that the battery wouldn't be able to discharge to lower levels before it stopped providing power because the buck converter design we previously had would stop working once input voltage met the output voltage (3.3V); this also meant that we wouldn't be able to take full advantage of our battery capacity.  However with this new design, we can optimally use our battery capacity. 
+
+The chip used in this new design is the TPS63001DRCR.
+
+
+
+
+
+## 10/10 (Meeting)
+
+Agenda:
+
+* Work on PCB layout to prepare for PCB/Board Review Session Tomorrow
+
+Assigned footprints to anchor schematics, imported coilcraft footprint for inductor since there was no matching footprint in kicad, started pcb layout (added ground planes and organized components to untangle air waves)
+
+
+
+## 10/11 (Meeting)
+
+Agenda:
+
+* Trace wires to PCB bla bla bla
+
+
+
+## 10/11 (PCB Review)
+
+Agenda:
+
+* Get PCB design/layout looked at
