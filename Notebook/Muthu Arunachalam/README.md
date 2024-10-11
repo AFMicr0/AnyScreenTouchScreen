@@ -236,7 +236,9 @@ Assigned footprints to anchor schematics, imported coilcraft footprint for induc
 
 Agenda:
 
-* Trace wires to PCB bla bla bla
+* Do PCB routing
+
+Reorganized components in PCB layout to make overall PCB much smaller; current dimensions are at 40.5mm x 57mm.  Did most of the wire routing but there are some traces that still have to be added.  Since the board is much smaller now, its difficult to complete the routing.  The plan is to bring whatever we have finished to the PCB review and ask for help on what we've been having difficulty with.
 
 
 
@@ -245,3 +247,8 @@ Agenda:
 Agenda:
 
 * Get PCB design/layout looked at
+* Questions
+  * What different wire gauges do we need to use for power vs data transfer? How do we route the power lines?
+  * How do we connect traces to the Battery Fuel Gauge module?
+  * Is the inductor a through-hole or surface mounted component
+  * Do we need more clearance for the area surrounding the screw?
